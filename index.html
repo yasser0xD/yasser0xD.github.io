@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yasser Debihi — Software Developer</title>
+  <meta name="description" content="Portfolio of Yasser Debihi — Computer Science & Networks graduate and software developer. Web development, Python, and practical systems." />
+
+  <meta property="og:title" content="Yasser Debihi — Software Developer">
+  <meta property="og:description" content="Computer Science & Networks graduate · Software developer">
+  <meta property="og:image" content="assets/php2.jpeg">
+  <meta property="og:url" content="https://github.com/yasser0xD">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="assets/styles.css" rel="stylesheet">
+</head>
+<body class="antialiased">
+
+  <div id="preloader" class="preloader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top glass-nav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home" data-reveal="fade-down">
+        Yasser <span class="brand-accent">Debihi</span><span class="brand-dot">.</span>
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars fs-4 text-color"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav mx-auto gap-lg-4 text-center">
+          <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav.about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience" data-i18n="nav.experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills" data-i18n="nav.skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center justify-content-center gap-3 mt-3 mt-lg-0">
+          <div class="lang-switch d-flex align-items-center bg-soft rounded-pill p-1">
+            <button id="btn-en" class="btn btn-sm lang-btn active" type="button">EN</button>
+            <button id="btn-ar" class="btn btn-sm lang-btn" type="button">AR</button>
+          </div>
+          <button id="themeToggle" class="btn btn-icon rounded-circle bg-soft" aria-label="Toggle dark mode" type="button">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="hero-section d-flex align-items-center">
+    <div class="hero-bg-glow glow-1"></div>
+    <div class="hero-bg-glow glow-2"></div>
+    <div class="container position-relative z-1">
+      <div class="row align-items-center gy-5 flex-column-reverse flex-lg-row">
+        <div class="col-lg-7 text-center text-lg-start" data-reveal="fade-up">
+          <div class="d-inline-flex align-items-center px-3 py-2 rounded-pill bg-soft border-accent mb-4 status-badge">
+            <span class="status-dot pulsing me-2"></span>
+            <span class="fw-semibold text-sm" data-i18n="hero.badge">Open to study-abroad & software opportunities</span>
+          </div>
+          <h1 class="display-3 fw-900 mb-3 hero-title">
+            <span data-i18n="hero.hi">Hi, I'm</span> <span class="brand-accent text-gradient">Yasser</span>
+          </h1>
+          <h2 class="h3 fw-600 mb-4 text-secondary-color typing-container">
+            <span id="typing-text" data-i18n="hero.title">Software Developer</span><span class="cursor">|</span>
+          </h2>
+          <p class="lead mb-5 opacity-80 pe-lg-5 hero-subtitle" data-i18n="hero.subtitle">
+            Computer Science & Networks graduate and software developer. I build practical web tools and Python applications — from a complete management system for a travel agency to academic and side projects.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+            <a href="#projects" class="btn btn-primary btn-lg rounded-pill px-4 shadow-accent hover-lift">
+              <span data-i18n="hero.ctaProjects">Explore My Work</span> <i class="fa-solid fa-arrow-right ms-2 fs-6"></i>
+            </a>
+            <a href="#contact" class="btn btn-outline-dynamic btn-lg rounded-pill px-4 hover-lift">
+              <span data-i18n="hero.ctaContact">Let's Talk</span>
+            </a>
+          </div>
+          <div class="mt-5 d-flex align-items-center justify-content-center justify-content-lg-start gap-4 social-links-hero opacity-75">
+            <a href="https://github.com/yasser0xD" target="_blank" rel="noopener" class="text-color hover-accent transition" aria-label="GitHub"><i class="fa-brands fa-github fs-4"></i></a>
+            <a href="https://www.linkedin.com/in/yasserdbh213" target="_blank" rel="noopener" class="text-color hover-accent transition" aria-label="LinkedIn"><i class="fa-brands fa-linkedin fs-4"></i></a>
+            <a href="mailto:yasser.debh@gmail.com" class="text-color hover-accent transition" aria-label="Email"><i class="fa-solid fa-envelope fs-4"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-5 text-center position-relative" data-reveal="fade-left">
+          <div class="profile-wrapper mx-auto">
+            <div class="profile-ring"></div>
+            <img id="profile-photo" src="assets/php2.jpeg" alt="Yasser Debihi" class="profile-photo">
+          </div>
+          <div class="floating-badge badge-1 glass-card"><i class="fa-brands fa-python text-warning"></i></div>
+          <div class="floating-badge badge-2 glass-card"><i class="fa-solid fa-network-wired text-info"></i></div>
+          <div class="floating-badge badge-3 glass-card"><i class="fa-brands fa-js text-warning"></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator d-none d-lg-flex">
+      <div class="mouse"><div class="wheel"></div></div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="section-pad">
+    <div class="container">
+      <div class="row gy-5 align-items-center">
+        <div class="col-lg-5" data-reveal="fade-right">
+          <div class="about-image-wrapper position-relative rounded-4 overflow-hidden shadow-lg">
+             <div class="aspect-ratio-box bg-soft d-flex align-items-center justify-content-center h-100 p-5">
+               <i class="fa-solid fa-code opacity-25 display-1"></i>
+             </div>
+             <div class="about-stats glass-card position-absolute bottom-0 start-0 m-3 p-3 rounded-3 border-accent-left">
+               <h4 class="fw-bold mb-0 text-gradient" data-i18n="about.badge">Graduate</h4>
+               <span class="small opacity-75" data-i18n="about.years">CS &amp; Networks</span>
+             </div>
+          </div>
+        </div>
+        <div class="col-lg-7 ps-lg-5" data-reveal="fade-up" data-reveal-delay="100">
+          <div class="section-header mb-4">
+            <span class="text-accent fw-bold tracking-widest text-uppercase small" data-i18n="section.about">Who I Am</span>
+            <h2 class="section-title h1 fw-900 mt-2" data-i18n="about.title">Building Useful <span class="brand-accent">Software</span>.</h2>
+          </div>
+          <p class="fs-5 text-secondary-color lead-text" data-i18n="about.p1">
+            I'm a Computer Science & Networks graduate from the University of M'Sila and a software developer. I enjoy turning real problems into clean, working tools — mostly with Python and modern web technologies.
+          </p>
+          <p class="text-secondary-color mt-3" data-i18n="about.p2">
+            I currently work at a travel agency, where I built a complete internal system to manage clients and invoices. I value careful planning before writing code, and I'm now preparing to continue my studies abroad.
+          </p>
+          <div class="d-flex flex-wrap gap-4 mt-4 pt-2 border-top border-soft">
+            <div class="d-flex align-items-center gap-3">
+              <div class="icon-box bg-soft rounded-circle text-accent"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <span class="d-block small text-uppercase fw-bold opacity-50" data-i18n="about.locationLabel">Location</span>
+                <span class="fw-medium" data-i18n="about.location">M'Sila, Algeria</span>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <div class="icon-box bg-soft rounded-circle text-accent"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div>
+                <span class="d-block small text-uppercase fw-bold opacity-50" data-i18n="about.fieldLabel">Field</span>
+                <span class="fw-medium" data-i18n="about.degree">Computer Science &amp; Networks</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5">
+            <a id="downloadCV" href="assets/cv.pdf" download="Yasser-Debihi-CV.pdf" class="btn btn-primary rounded-pill px-4 hover-lift shadow-accent">
+              <i class="fa-solid fa-cloud-arrow-down me-2"></i> <span data-i18n="hero.ctaCV">Download Resume</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Education -->
+  <section id="experience" class="section-pad bg-alternate">
+    <div class="container">
+      <div class="section-header text-center mb-5" data-reveal="fade-up">
+        <span class="text-accent fw-bold tracking-widest text-uppercase small" data-i18n="section.journey">My Journey</span>
+        <h2 class="section-title h1 fw-900 mt-2 mx-auto" data-i18n="journey.title">Experience &amp; <span class="brand-accent">Education</span></h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="timeline-modern">
+            <div class="timeline-modern-item" data-reveal="fade-up">
+              <div class="timeline-modern-marker bg-accent shadow-accent text-white"><i class="fa-solid fa-briefcase"></i></div>
+              <div class="timeline-modern-content bg-glass rounded-4 p-4 border-soft shadow-sm hover-elevate transition">
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
+                  <div>
+                    <h4 class="fw-bold mb-1" data-i18n="exp.travel.role">Software Developer</h4>
+                    <h6 class="text-accent fw-semibold mb-0" data-i18n="exp.travel.company">Travel &amp; Tourism Agency</h6>
+                  </div>
+                  <div class="badge bg-soft text-color align-self-start mt-2 mt-md-0 py-2 px-3 fw-bold border" data-i18n="exp.travel.time">2025 – Present</div>
+                </div>
+                <ul class="text-secondary-color ps-3 mb-0">
+                  <li class="mb-2" data-i18n="exp.travel.l1">Built a complete internal management system (Python + MySQL) for clients, invoices, and records.</li>
+                  <li class="mb-2" data-i18n="exp.travel.l2">Hosted it on the local network so every PC in the agency shares the same data.</li>
+                  <li data-i18n="exp.travel.l3">Created a Python script that checks visa-appointment availability and sends instant Telegram alerts.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="timeline-modern-item" id="education" data-reveal="fade-up">
+              <div class="timeline-modern-marker bg-body border border-accent text-accent"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="timeline-modern-content bg-transparent p-4 border-start border-4 border-accent rounded-end-4 hover-bg-soft transition">
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                  <div>
+                    <h4 class="fw-bold mb-1" data-i18n="edu.master.title">Master's in Networks &amp; ICT</h4>
+                    <h6 class="text-secondary-color fw-medium mb-0" data-i18n="edu.uni">University of M'Sila</h6>
+                  </div>
+                  <div class="text-md-end mt-2 mt-md-0">
+  <div class="text-accent fw-bold" data-i18n="edu.master.meta">Graduated 2026</div>
+  <div class="small opacity-75" data-i18n="edu.master.rank">Ranked 12 of 55</div>
+</div>
+                </div>
+                <p class="text-secondary-color small mb-0" data-i18n="edu.master.desc">Graduation project (team): a face-recognition student-attendance system, where I was responsible for development and implementation.</p>
+              </div>
+            </div>
+            <div class="timeline-modern-item pb-0" data-reveal="fade-up">
+              <div class="timeline-modern-marker bg-body border border-secondary text-secondary"><i class="fa-solid fa-award"></i></div>
+              <div class="timeline-modern-content bg-transparent p-4 border-start border-4 border-secondary rounded-end-4 hover-bg-soft transition">
+                 <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+                  <div>
+                    <h4 class="fw-bold mb-1 opacity-75" data-i18n="edu.bsc.title">Bachelor's in Information Systems &amp; Software Engineering</h4>
+                    <h6 class="text-secondary-color fw-medium mb-0 opacity-75" data-i18n="edu.uni">University of M'Sila</h6>
+                  </div>
+                  <div class="text-secondary fw-bold mt-2 mt-md-0 opacity-75" data-i18n="edu.bsc.meta">2024</div>
+                </div>
+                <p class="text-secondary-color small mb-0 opacity-75" data-i18n="edu.bsc.desc">Graduation project (team): a hotel website with an admin dashboard. Foundation in programming, databases, web development, and networks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section-pad bg-body position-relative">
+    <div class="bg-pattern opacity-5"></div>
+    <div class="container position-relative z-1">
+      <div class="section-header text-center mb-5" data-reveal="fade-up">
+        <span class="text-accent fw-bold tracking-widest text-uppercase small" data-i18n="section.expertise">My Skills</span>
+        <h2 class="section-title h1 fw-900 mt-2 mx-auto" data-i18n="skills.title">What I <span class="brand-accent">Work With</span></h2>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-4" data-reveal="fade-up" data-reveal-delay="0">
+          <div class="skill-category-card h-100 p-4 rounded-4 bg-glass border-hover-accent transition">
+            <div class="skill-icon-header mb-3 text-accent fs-3"><i class="fa-solid fa-code"></i></div>
+            <h4 class="fw-bold mb-4" data-i18n="skills.cat.programming">Programming</h4>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge skill-tag">Python</span>
+              <span class="badge skill-tag">JavaScript</span>
+              <span class="badge skill-tag">SQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-reveal="fade-up" data-reveal-delay="100">
+          <div class="skill-category-card h-100 p-4 rounded-4 bg-glass border-hover-accent transition">
+            <div class="skill-icon-header mb-3 text-accent fs-3"><i class="fa-solid fa-globe"></i></div>
+            <h4 class="fw-bold mb-4" data-i18n="skills.cat.web">Web Development</h4>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge skill-tag">HTML5</span>
+              <span class="badge skill-tag">CSS3</span>
+              <span class="badge skill-tag">Bootstrap</span>
+              <span class="badge skill-tag">MySQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-reveal="fade-up" data-reveal-delay="200">
+          <div class="skill-category-card h-100 p-4 rounded-4 bg-glass border-hover-accent transition">
+            <div class="skill-icon-header mb-3 text-accent fs-3"><i class="fa-solid fa-lightbulb"></i></div>
+            <h4 class="fw-bold mb-4" data-i18n="skills.cat.approach">Approach</h4>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge skill-tag" data-i18n="skills.tag.planning">Planning &amp; analysis</span>
+              <span class="badge skill-tag" data-i18n="skills.tag.ai">AI-assisted development</span>
+              <span class="badge skill-tag" data-i18n="skills.tag.problem">Problem solving</span>
+              <span class="badge skill-tag">Git &amp; GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section-pad pb-4 bg-alternate">
+    <div class="container">
+      <div class="section-header d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5" data-reveal="fade-up">
+        <div>
+          <span class="text-accent fw-bold tracking-widest text-uppercase small" data-i18n="section.work">Selected Work</span>
+          <h2 class="section-title h1 fw-900 mt-2 mb-0" data-i18n="projects.title">My <span class="brand-accent">Projects</span></h2>
+        </div>
+        <a href="https://github.com/yasser0xD" target="_blank" rel="noopener" class="btn btn-outline-dynamic rounded-pill mt-3 mt-md-0 d-inline-flex align-items-center">
+          <span data-i18n="projects.viewGithub">View all on GitHub</span> <i class="fa-brands fa-github ms-2"></i>
+        </a>
+      </div>
+
+      <div class="row g-5">
+        <!-- Featured: Travel Agency System -->
+        <div class="col-12" data-reveal="fade-up">
+          <div class="project-case-card row g-0 rounded-4 overflow-hidden border-soft shadow-sm bg-glass hover-elevate transition">
+            <div class="col-xl-6 project-img-container bg-alternate p-5 d-flex align-items-center justify-content-center">
+              <div class="mockup-window border border-secondary shadow-lg rounded-3 w-100 h-100 bg-body">
+                <div class="mockup-header border-bottom p-2 d-flex gap-2">
+                  <span class="rounded-circle bg-danger opacity-75" style="width: 10px; height: 10px;"></span>
+                  <span class="rounded-circle bg-warning opacity-75" style="width: 10px; height: 10px;"></span>
+                  <span class="rounded-circle bg-success opacity-75" style="width: 10px; height: 10px;"></span>
+                </div>
+                <div class="mockup-body p-4 d-flex flex-column gap-3 h-100 opacity-25 align-items-center justify-content-center">
+                   <i class="fa-solid fa-plane-departure display-1 text-accent"></i>
+                   <h3 class="fw-bold">Agency Dashboard</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6 p-4 p-lg-5 d-flex flex-column justify-content-center">
+              <div class="project-meta text-accent fw-bold small text-uppercase mb-2"><i class="fa-solid fa-star me-1"></i> <span data-i18n="projects.p1.tag">Work · Real Product</span></div>
+              <h3 class="fw-bold h2 mb-3" data-i18n="projects.p1.title">Travel Agency Management System</h3>
+              <p class="text-secondary-color lead-text mb-4" data-i18n="projects.p1.desc">
+                A complete internal system I built for the travel agency where I work, to manage clients, invoices, and records. It runs on the office's local network so every PC shares the same up-to-date data.
+              </p>
+              <div class="mb-4">
+                <h6 class="fw-bold mb-2 small text-uppercase opacity-75" data-i18n="projects.techStack">Tech Stack</h6>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-soft text-color">Python</span>
+                  <span class="badge bg-soft text-color">MySQL</span>
+                  <span class="badge bg-soft text-color">HTML / CSS / JS</span>
+                  <span class="badge bg-soft text-color">Bootstrap</span>
+                </div>
+              </div>
+              <div class="mt-auto d-flex gap-3">
+                <a href="https://github.com/yasser0xD" target="_blank" rel="noopener" class="btn btn-outline-dynamic rounded-pill px-4"><i class="fa-brands fa-github me-2"></i> <span data-i18n="projects.source">GitHub</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary projects grid -->
+      <div class="row g-4 mt-1">
+        <div class="col-md-6 col-lg-4" data-reveal="fade-up" data-reveal-delay="0">
+          <div class="project-mini-card h-100 p-4 rounded-4 bg-glass border-soft hover-elevate transition d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div class="project-mini-icon text-accent fs-3"><i class="fa-brands fa-telegram"></i></div>
+              <a href="https://github.com/yasser0xD" target="_blank" rel="noopener" class="text-secondary-color hover-accent" aria-label="GitHub"><i class="fa-brands fa-github fs-5"></i></a>
+            </div>
+            <div class="project-meta text-accent fw-bold small text-uppercase mb-1" data-i18n="projects.p2.tag">Automation</div>
+            <h4 class="fw-bold h5 mb-2" data-i18n="projects.p2.title">Visa Appointment Alert Bot</h4>
+            <p class="text-secondary-color small mb-3 flex-grow-1" data-i18n="projects.p2.desc">A Python script that checks for available visa appointments and instantly notifies staff via Telegram, so no slot is missed.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-soft text-color">Python</span>
+              <span class="badge bg-soft text-color">Telegram Bot</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-reveal="fade-up" data-reveal-delay="100">
+          <div class="project-mini-card h-100 p-4 rounded-4 bg-glass border-soft hover-elevate transition d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div class="project-mini-icon text-accent fs-3"><i class="fa-solid fa-user-check"></i></div>
+              <a href="https://github.com/yasser0xD" target="_blank" rel="noopener" class="text-secondary-color hover-accent" aria-label="GitHub"><i class="fa-brands fa-github fs-5"></i></a>
+            </div>
+            <div class="project-meta text-accent fw-bold small text-uppercase mb-1" data-i18n="projects.p3.tag">Master's Project · Team</div>
+            <h4 class="fw-bold h5 mb-2" data-i18n="projects.p3.title">Face-Recognition Attendance</h4>
+            <p class="text-secondary-color small mb-3 flex-grow-1" data-i18n="projects.p3.desc">A team graduation project on face-recognition student attendance. I was responsible for the development and implementation of the system.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-soft text-color">Python</span>
+              <span class="badge bg-soft text-color">Computer Vision</span>
+              <span class="badge bg-soft text-color">Flask</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-reveal="fade-up" data-reveal-delay="200">
+          <div class="project-mini-card h-100 p-4 rounded-4 bg-glass border-soft hover-elevate transition d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div class="project-mini-icon text-accent fs-3"><i class="fa-solid fa-hotel"></i></div>
+              <a href="https://github.com/yasser0xD" target="_blank" rel="noopener" class="text-secondary-color hover-accent" aria-label="GitHub"><i class="fa-brands fa-github fs-5"></i></a>
+            </div>
+            <div class="project-meta text-accent fw-bold small text-uppercase mb-1" data-i18n="projects.p4.tag">Bachelor's Project · Team</div>
+            <h4 class="fw-bold h5 mb-2" data-i18n="projects.p4.title">Hotel Website + Admin Dashboard</h4>
+            <p class="text-secondary-color small mb-3 flex-grow-1" data-i18n="projects.p4.desc">A team Bachelor's graduation project: a hotel website with an admin dashboard to manage rooms and bookings.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-soft text-color">HTML / CSS / JS</span>
+              <span class="badge bg-soft text-color">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Academic note (light) -->
+      <div class="row mt-5">
+        <div class="col-12" data-reveal="fade-up">
+          <div class="bg-glass border-soft rounded-4 p-4 d-flex flex-column flex-md-row align-items-md-center gap-3">
+            <div class="text-accent fs-4"><i class="fa-solid fa-book"></i></div>
+            <div class="flex-grow-1">
+              <h6 class="fw-bold mb-1" data-i18n="research.title">Academic coursework</h6>
+              <p class="small text-secondary-color mb-0" data-i18n="research.desc">Course projects & reports during my Networks studies, including 802.11s mesh networks, SDN, a Nessus security audit, and an IEEE 802.11 mini-project.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section-pad position-relative overflow-hidden bg-accent-gradient text-white">
+    <div class="contact-bg-pattern"></div>
+    <div class="container position-relative z-1">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center" data-reveal="fade-up">
+          <h2 class="display-5 fw-900 mb-4" data-i18n="contact.title">Let's Get In Touch</h2>
+          <p class="lead mb-5 opacity-85 fw-light" data-i18n="contact.hireText">
+            I'm open to study-abroad opportunities and software work. Feel free to reach out — I'd be happy to talk.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+            <a href="mailto:yasser.debh@gmail.com" class="btn btn-light btn-lg rounded-pill px-5 fw-bold text-accent shadow-lg hover-scale">
+              <i class="fa-solid fa-paper-plane me-2"></i> <span data-i18n="contact.button">Say Hello</span>
+            </a>
+            <a href="https://www.linkedin.com/in/yasserdbh213" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg rounded-pill px-4 fw-bold hover-scale">
+              <i class="fa-brands fa-linkedin me-2"></i> LinkedIn
+            </a>
+          </div>
+          <div class="d-flex justify-content-center flex-wrap gap-4 mt-5 pt-4 border-top border-light border-opacity-25 contact-info-bar">
+            <div class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-envelope opacity-75"></i>
+              <a href="mailto:yasser.debh@gmail.com" class="text-white text-decoration-none fw-medium">yasser.debh@gmail.com</a>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-envelope opacity-75"></i>
+              <a href="mailto:yasser.debihi@univ-msila.dz" class="text-white text-decoration-none fw-medium">yasser.debihi@univ-msila.dz</a>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <i class="fa-brands fa-github opacity-75"></i>
+              <a href="https://github.com/yasser0xD" target="_blank" rel="noopener" class="text-white text-decoration-none fw-medium">github.com/yasser0xD</a>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-location-dot opacity-75"></i>
+              <span class="fw-medium" data-i18n="contact.location">M'Sila, Algeria</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 text-center bg-body border-top border-soft">
+    <div class="container small">
+      <span class="opacity-75">&copy; <span id="year"></span> <span class="fw-bold">Yasser Debihi</span>. <span data-i18n="footer.rights">Crafted with care.</span></span>
+    </div>
+  </footer>
+
+  <button id="toTop" class="to-top btn btn-primary shadow-accent rounded-circle" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/script.js" defer></script>
+</body>
+</html>
