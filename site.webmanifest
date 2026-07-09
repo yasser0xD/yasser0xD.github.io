@@ -1,0 +1,20 @@
+{
+  "name": "Yasser Debihi — Software Developer",
+  "short_name": "Yasser Debihi",
+  "description": "Portfolio of Yasser Debihi — software developer & web security enthusiast.",
+  "lang": "en",
+  "dir": "auto",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b1120",
+  "theme_color": "#0b1120",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
