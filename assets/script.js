@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById("preloader");
   const navbar = document.querySelector(".glass-nav");
   const backToTop = document.getElementById("toTop");
+  const mobileBackToTop = document.getElementById("mobileToTop");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (preloader) {
@@ -31,19 +32,24 @@ document.addEventListener("DOMContentLoaded", () => {
       "contact.form.emailPh": "you@example.com",
       "contact.form.msgPh": "Tell me about your opportunity or project…",
       "stats.projects": "Projects", "stats.rank": "Master's rank", "stats.langs": "Languages", "a11y.skip": "Skip to content",
+      "a11y.toggleNavigation": "Toggle navigation", "a11y.toggleTheme": "Toggle color theme", "a11y.backToTop": "Back to top",
+      "a11y.quickLinks": "Quick links", "a11y.email": "Email", "a11y.github": "GitHub", "a11y.linkedin": "LinkedIn", "a11y.downloadCv": "Download CV", "a11y.language": "Language", "a11y.english": "English", "a11y.arabic": "Arabic",
+      "dock.email": "Email", "dock.github": "GitHub", "dock.linkedin": "LinkedIn", "dock.cv": "CV", "dock.top": "Top",
       "nav.about": "About", "nav.skills": "Skills", "nav.projects": "Projects",
-      "nav.experience": "Experience", "nav.security": "Security", "nav.contact": "Contact",
+      "nav.experience": "Experience", "nav.events": "Events", "nav.security": "Security", "nav.contact": "Contact",
 
-      "hero.badge": "Open to study-abroad & software opportunities",
+      "hero.badge": "Software Development \u2022 Networks \u2022 Web Security",
       "hero.hi": "Hi, I'm",
       "hero.title": "Software Developer",
-      "hero.subtitle": "Computer Science & Networks graduate and software developer. I build practical web tools and Python applications \u2014 from a complete management system for a travel agency to academic and side projects.",
+      "hero.titles": ["Software Developer", "Web Security Enthusiast"],
+      "hero.subtitle": "Computer Science graduate passionate about building practical software and exploring networks and web security. Interested in learning, collaboration, and tackling real-world challenges.",
       "hero.ctaProjects": "Explore My Work",
       "hero.ctaContact": "Let's Talk",
       "hero.ctaCV": "Download Resume",
 
       "section.about": "Who I Am", "about.title": "Building Useful Software.",
       "about.badge": "Graduate", "about.years": "CS & Networks",
+      "about.focusTitle": "Focus Areas", "about.focusSoftware": "Practical software", "about.focusNetworks": "Networks", "about.focusSecurity": "Web security",
       "about.p1": "I'm a Computer Science & Networks graduate from the University of M'Sila and a software developer. I enjoy turning real problems into clean, working tools \u2014 mostly with Python and modern web technologies.",
       "about.p2": "I currently work at a travel agency, where I built a complete internal system to manage clients and invoices. I value careful planning before writing code, and I'm now preparing to continue my studies abroad.",
       "about.locationLabel": "Location", "about.location": "M'Sila, Algeria",
@@ -79,6 +85,14 @@ document.addEventListener("DOMContentLoaded", () => {
       "research.title": "Academic coursework",
       "research.desc": "Course projects & reports during my Networks studies, including 802.11s mesh networks, SDN, a Nessus security audit, and an IEEE 802.11 mini-project.",
 
+      "events.eyebrow": "Events & Conferences",
+      "events.title": "OpenSSL Conference 2026",
+      "events.meta": "Prague, Czech Republic \u00b7 13\u201315 October 2026",
+      "events.desc": "I attended OpenSSL Conference 2026 in Prague through a fully funded scholarship. I\u2019m interested in learning and connecting with experienced people in the field.",
+      "events.mainAlt": "Yasser in front of the OpenSSL Conference sign",
+      "events.groupAlt": "Attendees posing together at OpenSSL Conference 2026",
+      "events.sessionAlt": "Audience watching a technical presentation at OpenSSL Conference 2026",
+
       "section.security": "Security & Web Defense",
       "security.title": "Security ",
       "security.subtitle": "Hands-on labs where I recreate a real web vulnerability and then implement the secure fix \u2014 to understand attacks from both sides.",
@@ -89,14 +103,19 @@ document.addEventListener("DOMContentLoaded", () => {
       "sec.cookie.desc": "An Express/EJS lab that demonstrates how weak, predictable session cookies can be brute-forced \u2014 and the hardening steps that stop it.",
 
       "section.journey": "My Journey", "journey.title": "Experience & Education ",
+      "journey.experience": "Professional experience", "journey.education": "Education",
 
-      "exp.travel.role": "Software Developer", "exp.travel.company": "Travel & Tourism Agency", "exp.travel.time": "2025 \u2013 Present",
+      "exp.travel.role": "Software Developer", "exp.travel.company": "Travel & Tourism Agency", "exp.travel.time": "2026 \u2013 Present",
+      "exp.travel.logoAlt": "Pinson Travels logo",
       "exp.travel.l1": "Built a complete internal management system (Python + MySQL) for clients, invoices, and records.",
       "exp.travel.l2": "Hosted it on the local network so every PC in the agency shares the same data.",
       "exp.travel.l3": "Created a Python script that checks visa-appointment availability and sends instant Telegram alerts.",
+      "experience.networkPhotoAlt": "A computer monitor showing network settings, beside a laptop and networking equipment",
+      "experience.developerPhotoAlt": "A person seated beside a computer displaying code and a web interface",
 
       "edu.master.title": "Master's in Networks & ICT", "edu.uni": "University of M'Sila",
       "edu.master.meta": "Graduated 2026", "edu.master.desc": "Graduation project (team): a face-recognition student-attendance system, where I was responsible for development and implementation.",
+      "education.labPhotoAlt": "People seated at computers in a lab, with laptops and printed pages on the desks",
       "edu.bsc.title": "Bachelor's in Information Systems & Software Engineering", "edu.bsc.meta": "2024",
       "edu.bsc.desc": "Graduation project (team): a hotel website with an admin dashboard. Foundation in programming, databases, web development, and networks.",
 
@@ -119,19 +138,24 @@ document.addEventListener("DOMContentLoaded", () => {
       "contact.form.emailPh": "you@example.com",
       "contact.form.msgPh": "أخبرني عن الفرصة أو المشروع…",
       "stats.projects": "المشاريع", "stats.rank": "ترتيب الماجستير", "stats.langs": "اللغات", "a11y.skip": "تخطَّ إلى المحتوى",
+      "a11y.toggleNavigation": "\u062a\u0628\u062f\u064a\u0644 \u0627\u0644\u062a\u0646\u0642\u0644", "a11y.toggleTheme": "\u062a\u0628\u062f\u064a\u0644 \u0627\u0644\u0633\u0645\u0629 \u0627\u0644\u0644\u0648\u0646\u064a\u0629", "a11y.backToTop": "\u0627\u0644\u0639\u0648\u062f\u0629 \u0625\u0644\u0649 \u0627\u0644\u0623\u0639\u0644\u0649",
+      "a11y.quickLinks": "\u0631\u0648\u0627\u0628\u0637 \u0633\u0631\u064a\u0639\u0629", "a11y.email": "\u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a", "a11y.github": "GitHub", "a11y.linkedin": "LinkedIn", "a11y.downloadCv": "\u062a\u062d\u0645\u064a\u0644 \u0627\u0644\u0633\u064a\u0631\u0629 \u0627\u0644\u0630\u0627\u062a\u064a\u0629", "a11y.language": "\u0627\u0644\u0644\u063a\u0629", "a11y.english": "\u0627\u0644\u0625\u0646\u062c\u0644\u064a\u0632\u064a\u0629", "a11y.arabic": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+      "dock.email": "\u0627\u0644\u0628\u0631\u064a\u062f", "dock.github": "GitHub", "dock.linkedin": "LinkedIn", "dock.cv": "CV", "dock.top": "\u0623\u0639\u0644\u0649",
       "nav.about": "\u0645\u0646 \u0623\u0646\u0627", "nav.skills": "\u0627\u0644\u0645\u0647\u0627\u0631\u0627\u062a", "nav.projects": "\u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639",
-      "nav.experience": "\u0627\u0644\u062e\u0628\u0631\u0627\u062a", "nav.security": "\u0627\u0644\u0623\u0645\u0646", "nav.contact": "\u062a\u0648\u0627\u0635\u0644",
+      "nav.experience": "\u0627\u0644\u062e\u0628\u0631\u0627\u062a", "nav.events": "\u0627\u0644\u0641\u0639\u0627\u0644\u064a\u0627\u062a", "nav.security": "\u0627\u0644\u0623\u0645\u0646", "nav.contact": "\u062a\u0648\u0627\u0635\u0644",
 
-      "hero.badge": "\u0645\u0646\u0641\u062a\u062d \u0644\u0641\u0631\u0635 \u0627\u0644\u062f\u0631\u0627\u0633\u0629 \u0628\u0627\u0644\u062e\u0627\u0631\u062c \u0648\u0627\u0644\u0639\u0645\u0644 \u0627\u0644\u0628\u0631\u0645\u062c\u064a",
+      "hero.badge": "\u062a\u0637\u0648\u064a\u0631 \u0627\u0644\u0628\u0631\u0645\u062c\u064a\u0627\u062a \u2022 \u0627\u0644\u0634\u0628\u0643\u0627\u062a \u2022 \u0623\u0645\u0646 \u0627\u0644\u0648\u064a\u0628",
       "hero.hi": "\u0645\u0631\u062d\u0628\u0627\u064b\u060c \u0623\u0646\u0627",
       "hero.title": "\u0645\u0637\u0648\u0651\u0631 \u0628\u0631\u0645\u062c\u064a\u0627\u062a",
-      "hero.subtitle": "\u062e\u0631\u0651\u064a\u062c \u0639\u0644\u0648\u0645 \u062d\u0627\u0633\u0648\u0628 \u0648\u0634\u0628\u0643\u0627\u062a \u0648\u0645\u0637\u0648\u0651\u0631 \u0628\u0631\u0645\u062c\u064a\u0627\u062a. \u0623\u0628\u0646\u064a \u0623\u062f\u0648\u0627\u062a \u0648\u064a\u0628 \u0639\u0645\u0644\u064a\u0629 \u0648\u062a\u0637\u0628\u064a\u0642\u0627\u062a Python \u2014 \u0645\u0646 \u0646\u0638\u0627\u0645 \u0625\u062f\u0627\u0631\u0629 \u0645\u062a\u0643\u0627\u0645\u0644 \u0644\u0648\u0643\u0627\u0644\u0629 \u0633\u0641\u0631 \u0625\u0644\u0649 \u0645\u0634\u0627\u0631\u064a\u0639 \u0623\u0643\u0627\u062f\u064a\u0645\u064a\u0629 \u0648\u062c\u0627\u0646\u0628\u064a\u0629.",
+      "hero.titles": ["\u0645\u0637\u0648\u0651\u0631 \u0628\u0631\u0645\u062c\u064a\u0627\u062a", "\u0645\u0647\u062a\u0645 \u0628\u0623\u0645\u0646 \u0627\u0644\u0648\u064a\u0628"],
+      "hero.subtitle": "\u062e\u0631\u0651\u064a\u062c \u0639\u0644\u0648\u0645 \u062d\u0627\u0633\u0648\u0628 \u0634\u063a\u0648\u0641 \u0628\u0628\u0646\u0627\u0621 \u0628\u0631\u0645\u062c\u064a\u0627\u062a \u0639\u0645\u0644\u064a\u0629 \u0648\u0627\u0633\u062a\u0643\u0634\u0627\u0641 \u0627\u0644\u0634\u0628\u0643\u0627\u062a \u0648\u0623\u0645\u0646 \u0627\u0644\u0648\u064a\u0628. \u0645\u0647\u062a\u0645 \u0628\u0627\u0644\u062a\u0639\u0644\u0645 \u0648\u0627\u0644\u062a\u0639\u0627\u0648\u0646 \u0648\u0645\u0648\u0627\u062c\u0647\u0629 \u062a\u062d\u062f\u064a\u0627\u062a \u0648\u0627\u0642\u0639\u064a\u0629.",
       "hero.ctaProjects": "\u0627\u0633\u062a\u0643\u0634\u0641 \u0623\u0639\u0645\u0627\u0644\u064a",
       "hero.ctaContact": "\u0644\u0646\u062a\u0648\u0627\u0635\u0644",
       "hero.ctaCV": "\u062a\u062d\u0645\u064a\u0644 \u0627\u0644\u0633\u064a\u0631\u0629 \u0627\u0644\u0630\u0627\u062a\u064a\u0629",
 
       "section.about": "\u0645\u0646 \u0623\u0646\u0627", "about.title": "\u0623\u0628\u0646\u064a \u0628\u0631\u0645\u062c\u064a\u0627\u062a \u0645\u0641\u064a\u062f\u0629.",
       "about.badge": "\u062e\u0631\u0651\u064a\u062c", "about.years": "\u0639\u0644\u0648\u0645 \u062d\u0627\u0633\u0648\u0628 \u0648\u0634\u0628\u0643\u0627\u062a",
+      "about.focusTitle": "\u0645\u062c\u0627\u0644\u0627\u062a \u0627\u0644\u0627\u0647\u062a\u0645\u0627\u0645", "about.focusSoftware": "\u0628\u0631\u0645\u062c\u064a\u0627\u062a \u0639\u0645\u0644\u064a\u0629", "about.focusNetworks": "\u0627\u0644\u0634\u0628\u0643\u0627\u062a", "about.focusSecurity": "\u0623\u0645\u0646 \u0627\u0644\u0648\u064a\u0628",
       "about.p1": "\u0623\u0646\u0627 \u062e\u0631\u0651\u064a\u062c \u0639\u0644\u0648\u0645 \u062d\u0627\u0633\u0648\u0628 \u0648\u0634\u0628\u0643\u0627\u062a \u0645\u0646 \u062c\u0627\u0645\u0639\u0629 \u0627\u0644\u0645\u0633\u064a\u0644\u0629 \u0648\u0645\u0637\u0648\u0651\u0631 \u0628\u0631\u0645\u062c\u064a\u0627\u062a. \u0623\u0633\u062a\u0645\u062a\u0639 \u0628\u062a\u062d\u0648\u064a\u0644 \u0627\u0644\u0645\u0634\u0627\u0643\u0644 \u0627\u0644\u0648\u0627\u0642\u0639\u064a\u0629 \u0625\u0644\u0649 \u0623\u062f\u0648\u0627\u062a \u0646\u0638\u064a\u0641\u0629 \u062a\u0639\u0645\u0644 \u0628\u0643\u0641\u0627\u0621\u0629 \u2014 \u063a\u0627\u0644\u0628\u0627\u064b \u0628\u0640 Python \u0648\u062a\u0642\u0646\u064a\u0627\u062a \u0627\u0644\u0648\u064a\u0628 \u0627\u0644\u062d\u062f\u064a\u062b\u0629.",
       "about.p2": "\u0623\u0639\u0645\u0644 \u062d\u0627\u0644\u064a\u0627\u064b \u0641\u064a \u0648\u0643\u0627\u0644\u0629 \u0633\u0641\u0631\u060c \u062d\u064a\u062b \u0628\u0646\u064a\u062a \u0646\u0638\u0627\u0645\u0627\u064b \u062f\u0627\u062e\u0644\u064a\u0627\u064b \u0643\u0627\u0645\u0644\u0627\u064b \u0644\u0625\u062f\u0627\u0631\u0629 \u0627\u0644\u0639\u0645\u0644\u0627\u0621 \u0648\u0627\u0644\u0641\u0648\u0627\u062a\u064a\u0631. \u0623\u0624\u0645\u0646 \u0628\u0627\u0644\u062a\u062e\u0637\u064a\u0637 \u0627\u0644\u062c\u064a\u062f \u0642\u0628\u0644 \u0643\u062a\u0627\u0628\u0629 \u0627\u0644\u0643\u0648\u062f\u060c \u0648\u0623\u0633\u062a\u0639\u062f \u0627\u0644\u0622\u0646 \u0644\u0645\u0648\u0627\u0635\u0644\u0629 \u062f\u0631\u0627\u0633\u062a\u064a \u0628\u0627\u0644\u062e\u0627\u0631\u062c.",
       "about.locationLabel": "\u0627\u0644\u0645\u0648\u0642\u0639", "about.location": "\u0627\u0644\u0645\u0633\u064a\u0644\u0629\u060c \u0627\u0644\u062c\u0632\u0627\u0626\u0631",
@@ -167,6 +191,14 @@ document.addEventListener("DOMContentLoaded", () => {
       "research.title": "\u062f\u0631\u0627\u0633\u0627\u062a \u0623\u0643\u0627\u062f\u064a\u0645\u064a\u0629",
       "research.desc": "\u0645\u0634\u0627\u0631\u064a\u0639 \u0648\u062a\u0642\u0627\u0631\u064a\u0631 \u062f\u0631\u0627\u0633\u064a\u0629 \u0636\u0645\u0646 \u062a\u062e\u0635\u0635 \u0627\u0644\u0634\u0628\u0643\u0627\u062a\u060c \u062a\u0634\u0645\u0644 \u0634\u0628\u0643\u0627\u062a 802.11s\u060c \u0648 SDN\u060c \u0648\u062a\u062f\u0642\u064a\u0642\u0627\u064b \u0623\u0645\u0646\u064a\u0627\u064b \u0628\u0640 Nessus\u060c \u0648\u0645\u0634\u0631\u0648\u0639\u0627\u064b \u0645\u0635\u063a\u0631\u0627\u064b \u0644\u0640 IEEE 802.11.",
 
+      "events.eyebrow": "\u0627\u0644\u0641\u0639\u0627\u0644\u064a\u0627\u062a \u0648\u0627\u0644\u0645\u0624\u062a\u0645\u0631\u0627\u062a",
+      "events.title": "\u0645\u0624\u062a\u0645\u0631 OpenSSL 2026",
+      "events.meta": "\u0628\u0631\u0627\u063a\u060c \u062c\u0645\u0647\u0648\u0631\u064a\u0629 \u0627\u0644\u062a\u0634\u064a\u0643 \u00b7 13\u201315 \u0623\u0643\u062a\u0648\u0628\u0631 2026",
+      "events.desc": "\u062d\u0636\u0631\u062a \u0645\u0624\u062a\u0645\u0631 OpenSSL 2026 \u0641\u064a \u0628\u0631\u0627\u063a \u0628\u0645\u0646\u062d\u0629 \u062f\u0631\u0627\u0633\u064a\u0629 \u0645\u0645\u0648\u0651\u0644\u0629 \u0628\u0627\u0644\u0643\u0627\u0645\u0644. \u0623\u0647\u062a\u0645 \u0628\u0627\u0644\u062a\u0639\u0644\u0645 \u0648\u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639 \u0623\u0634\u062e\u0627\u0635 \u0630\u0648\u064a \u062e\u0628\u0631\u0629 \u0641\u064a \u0627\u0644\u0645\u062c\u0627\u0644.",
+      "events.mainAlt": "\u064a\u0627\u0633\u0631 \u0623\u0645\u0627\u0645 \u0644\u0648\u062d\u0629 \u0645\u0624\u062a\u0645\u0631 OpenSSL",
+      "events.groupAlt": "\u062d\u0636\u0648\u0631 \u064a\u0644\u062a\u0642\u0637\u0648\u0646 \u0635\u0648\u0631\u0629 \u062c\u0645\u0627\u0639\u064a\u0629 \u0641\u064a \u0645\u0624\u062a\u0645\u0631 OpenSSL 2026",
+      "events.sessionAlt": "\u062c\u0645\u0647\u0648\u0631 \u064a\u0634\u0627\u0647\u062f \u0639\u0631\u0636\u0627\u064b \u062a\u0642\u0646\u064a\u0627\u064b \u0641\u064a \u0645\u0624\u062a\u0645\u0631 OpenSSL 2026",
+
       "section.security": "\u0627\u0644\u0623\u0645\u0646 \u0648\u0627\u0644\u062f\u0641\u0627\u0639 \u0639\u0646 \u0627\u0644\u0648\u064a\u0628",
       "security.title": "\u0627\u0644\u0623\u0645\u0646 ",
       "security.subtitle": "\u0645\u062e\u062a\u0628\u0631\u0627\u062a \u0639\u0645\u0644\u064a\u0629 \u0623\u0639\u064a\u062f \u0641\u064a\u0647\u0627 \u0625\u0646\u0634\u0627\u0621 \u062b\u063a\u0631\u0629 \u0648\u064a\u0628 \u062d\u0642\u064a\u0642\u064a\u0629 \u062b\u0645 \u0623\u0637\u0628\u0651\u0642 \u0627\u0644\u0625\u0635\u0644\u0627\u062d \u0627\u0644\u0622\u0645\u0646 \u2014 \u0644\u0641\u0647\u0645 \u0627\u0644\u0647\u062c\u0645\u0627\u062a \u0645\u0646 \u0627\u0644\u062c\u0627\u0646\u0628\u064a\u0646.",
@@ -177,14 +209,19 @@ document.addEventListener("DOMContentLoaded", () => {
       "sec.cookie.desc": "\u0645\u062e\u062a\u0628\u0631 Express/EJS \u064a\u0648\u0636\u0651\u062d \u0643\u064a\u0641 \u064a\u0645\u0643\u0646 \u0627\u062e\u062a\u0631\u0627\u0642 \u0643\u0648\u0643\u064a\u0632 \u0627\u0644\u062c\u0644\u0633\u0627\u062a \u0627\u0644\u0636\u0639\u064a\u0641\u0629 \u0648\u0627\u0644\u0642\u0627\u0628\u0644\u0629 \u0644\u0644\u062a\u0646\u0628\u0624 \u0628\u0627\u0644\u062a\u062e\u0645\u064a\u0646 \u2014 \u0648\u062e\u0637\u0648\u0627\u062a \u0627\u0644\u062a\u0623\u0645\u064a\u0646 \u0627\u0644\u062a\u064a \u062a\u0648\u0642\u0641\u0647.",
 
       "section.journey": "\u0645\u0633\u064a\u0631\u062a\u064a", "journey.title": "\u0627\u0644\u062e\u0628\u0631\u0627\u062a \u0648\u0627\u0644\u062a\u0639\u0644\u064a\u0645 ",
+      "journey.experience": "\u0627\u0644\u062e\u0628\u0631\u0629 \u0627\u0644\u0645\u0647\u0646\u064a\u0629", "journey.education": "\u0627\u0644\u062a\u0639\u0644\u064a\u0645",
 
-      "exp.travel.role": "\u0645\u0637\u0648\u0651\u0631 \u0628\u0631\u0645\u062c\u064a\u0627\u062a", "exp.travel.company": "\u0648\u0643\u0627\u0644\u0629 \u0633\u064a\u0627\u062d\u0629 \u0648\u0633\u0641\u0631", "exp.travel.time": "2025 \u2013 \u0627\u0644\u0622\u0646",
+      "exp.travel.role": "\u0645\u0637\u0648\u0651\u0631 \u0628\u0631\u0645\u062c\u064a\u0627\u062a", "exp.travel.company": "\u0648\u0643\u0627\u0644\u0629 \u0633\u064a\u0627\u062d\u0629 \u0648\u0633\u0641\u0631", "exp.travel.time": "2026 \u2013 \u0627\u0644\u0622\u0646",
+      "exp.travel.logoAlt": "\u0634\u0639\u0627\u0631 Pinson Travels",
       "exp.travel.l1": "\u0628\u0646\u064a\u062a \u0646\u0638\u0627\u0645 \u0625\u062f\u0627\u0631\u0629 \u062f\u0627\u062e\u0644\u064a \u0645\u062a\u0643\u0627\u0645\u0644 (Python + MySQL) \u0644\u0644\u0639\u0645\u0644\u0627\u0621 \u0648\u0627\u0644\u0641\u0648\u0627\u062a\u064a\u0631 \u0648\u0627\u0644\u0633\u062c\u0644\u0627\u062a.",
       "exp.travel.l2": "\u0627\u0633\u062a\u0636\u0641\u062a\u0647 \u0639\u0644\u0649 \u0627\u0644\u0634\u0628\u0643\u0629 \u0627\u0644\u0645\u062d\u0644\u064a\u0629 \u0644\u062a\u062a\u0634\u0627\u0631\u0643 \u062c\u0645\u064a\u0639 \u0623\u062c\u0647\u0632\u0629 \u0627\u0644\u0648\u0643\u0627\u0644\u0629 \u0646\u0641\u0633 \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a.",
       "exp.travel.l3": "\u0623\u0646\u0634\u0623\u062a \u0633\u0643\u0631\u064a\u0628\u062a Python \u064a\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u062a\u0648\u0641\u0651\u0631 \u0645\u0648\u0627\u0639\u064a\u062f \u0627\u0644\u0641\u064a\u0632\u0627 \u0648\u064a\u0631\u0633\u0644 \u062a\u0646\u0628\u064a\u0647\u0627\u062a \u0641\u0648\u0631\u064a\u0629 \u0639\u0628\u0631 \u062a\u064a\u0644\u064a\u063a\u0631\u0627\u0645.",
+      "experience.networkPhotoAlt": "\u0634\u0627\u0634\u0629 \u062d\u0627\u0633\u0648\u0628 \u062a\u0639\u0631\u0636 \u0625\u0639\u062f\u0627\u062f\u0627\u062a \u0634\u0628\u0643\u0629\u060c \u0628\u062c\u0627\u0646\u0628 \u062d\u0627\u0633\u0648\u0628 \u0645\u062d\u0645\u0648\u0644 \u0648\u0645\u0639\u062f\u0627\u062a \u0634\u0628\u0643\u0629",
+      "experience.developerPhotoAlt": "\u0634\u062e\u0635 \u064a\u062c\u0644\u0633 \u0628\u062c\u0627\u0646\u0628 \u062d\u0627\u0633\u0648\u0628 \u062a\u0639\u0631\u0636 \u0634\u064a\u0641\u0631\u0629 \u0648\u0648\u0627\u062c\u0647\u0629 \u0648\u064a\u0628",
 
       "edu.master.title": "\u0645\u0627\u0633\u062a\u0631 \u0641\u064a \u0627\u0644\u0634\u0628\u0643\u0627\u062a \u0648\u062a\u0643\u0646\u0648\u0644\u0648\u062c\u064a\u0627 \u0627\u0644\u0625\u0639\u0644\u0627\u0645 \u0648\u0627\u0644\u0627\u062a\u0635\u0627\u0644", "edu.uni": "\u062c\u0627\u0645\u0639\u0629 \u0627\u0644\u0645\u0633\u064a\u0644\u0629",
       "edu.master.meta": "\u062a\u062e\u0631\u062c 2026", "edu.master.desc": "\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062a\u062e\u0631\u062c (\u062c\u0645\u0627\u0639\u064a): \u0646\u0638\u0627\u0645 \u062d\u0636\u0648\u0631 \u0644\u0644\u0637\u0644\u0627\u0628 \u0628\u0627\u0644\u062a\u0639\u0631\u0641 \u0639\u0644\u0649 \u0627\u0644\u0648\u062c\u0648\u0647\u060c \u0643\u0646\u062a \u0627\u0644\u0645\u0633\u0624\u0648\u0644 \u0641\u064a\u0647 \u0639\u0646 \u0627\u0644\u062a\u0637\u0648\u064a\u0631 \u0648\u0627\u0644\u062a\u0646\u0641\u064a\u0630.",
+      "education.labPhotoAlt": "\u0623\u0634\u062e\u0627\u0635 \u064a\u062c\u0644\u0633\u0648\u0646 \u0623\u0645\u0627\u0645 \u062d\u0648\u0627\u0633\u064a\u0628 \u0641\u064a \u0645\u062e\u062a\u0628\u0631\u060c \u0645\u0639 \u062d\u0648\u0627\u0633\u064a\u0628 \u0645\u062d\u0645\u0648\u0644\u0629 \u0648\u0623\u0648\u0631\u0627\u0642 \u0645\u0637\u0628\u0648\u0639\u0629 \u0639\u0644\u0649 \u0627\u0644\u0637\u0627\u0648\u0644\u0627\u062a",
       "edu.bsc.title": "\u0644\u064a\u0633\u0627\u0646\u0633 \u0641\u064a \u0646\u0638\u0645 \u0627\u0644\u0645\u0639\u0644\u0648\u0645\u0627\u062a \u0648\u0647\u0646\u062f\u0633\u0629 \u0627\u0644\u0628\u0631\u0645\u062c\u064a\u0627\u062a", "edu.bsc.meta": "2024",
       "edu.bsc.desc": "\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062a\u062e\u0631\u062c (\u062c\u0645\u0627\u0639\u064a): \u0645\u0648\u0642\u0639 \u0641\u0646\u062f\u0642 \u0645\u0639 \u0644\u0648\u062d\u0629 \u062a\u062d\u0643\u0645. \u0623\u0633\u0627\u0633 \u0641\u064a \u0627\u0644\u0628\u0631\u0645\u062c\u0629 \u0648\u0642\u0648\u0627\u0639\u062f \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0648\u062a\u0637\u0648\u064a\u0631 \u0627\u0644\u0648\u064a\u0628 \u0648\u0627\u0644\u0634\u0628\u0643\u0627\u062a.",
 
@@ -197,21 +234,47 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   let typingTimeout;
-  function startTypingEffect(text) {
+  let typingRun = 0;
+  function startTypingEffect(labels) {
     const typingSpan = document.getElementById("typing-text");
     if (!typingSpan) return;
-    if (prefersReducedMotion) { typingSpan.textContent = text; return; }
     clearTimeout(typingTimeout);
-    typingSpan.textContent = "";
-    let i = 0;
-    function typeChar() {
-      if (i < text.length) {
-        typingSpan.textContent += text.charAt(i);
-        i++;
-        typingTimeout = setTimeout(typeChar, 45);
+    const run = ++typingRun;
+    const words = labels.map(label => Array.from(label));
+    if (!words.length) return;
+    if (prefersReducedMotion) {
+      typingSpan.textContent = words[0].join("");
+      return;
+    }
+    let wordIndex = 0;
+    let charIndex = words[0].length;
+    let deleting = false;
+    typingSpan.textContent = words[0].join("");
+
+    function tick() {
+      if (run !== typingRun) return;
+      const word = words[wordIndex];
+      if (deleting) {
+        charIndex = Math.max(0, charIndex - 1);
+        typingSpan.textContent = word.slice(0, charIndex).join("");
+        if (charIndex === 0) {
+          deleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          typingTimeout = setTimeout(tick, 350);
+        } else {
+          typingTimeout = setTimeout(tick, 42);
+        }
+      } else if (charIndex < word.length) {
+        charIndex += 1;
+        typingSpan.textContent = word.slice(0, charIndex).join("");
+        typingTimeout = setTimeout(tick, 78);
+      } else {
+        deleting = true;
+        typingTimeout = setTimeout(tick, 800);
       }
     }
-    typeChar();
+
+    typingTimeout = setTimeout(tick, 900);
   }
 
   function setLanguage(lang) {
@@ -219,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const key = el.getAttribute("data-i18n");
       if (translations[lang] && translations[lang][key] !== undefined) {
         if (el.id === "typing-text") {
-          startTypingEffect(translations[lang][key]);
+          startTypingEffect(translations[lang]["hero.titles"] || [translations[lang][key]]);
         } else {
           el.innerHTML = translations[lang][key];
         }
@@ -231,12 +294,27 @@ document.addEventListener("DOMContentLoaded", () => {
         el.setAttribute("placeholder", translations[lang][phKey]);
       }
     });
+    document.querySelectorAll("[data-i18n-alt]").forEach(el => {
+      const altKey = el.getAttribute("data-i18n-alt");
+      if (translations[lang] && translations[lang][altKey] !== undefined) {
+        el.setAttribute("alt", translations[lang][altKey]);
+      }
+    });
+    document.querySelectorAll("[data-i18n-aria-label]").forEach(el => {
+      const ariaKey = el.getAttribute("data-i18n-aria-label");
+      if (translations[lang] && translations[lang][ariaKey] !== undefined) {
+        el.setAttribute("aria-label", translations[lang][ariaKey]);
+      }
+    });
     htmlTag.lang = lang;
-    bodyTag.dir = lang === "ar" ? "rtl" : "ltr";
+    htmlTag.dir = lang === "ar" ? "rtl" : "ltr";
+    bodyTag.dir = htmlTag.dir;
     localStorage.setItem("lang", lang);
     if (btnEn && btnAr) {
       btnEn.classList.toggle("active", lang === "en");
       btnAr.classList.toggle("active", lang === "ar");
+      btnEn.setAttribute("aria-pressed", String(lang === "en"));
+      btnAr.setAttribute("aria-pressed", String(lang === "ar"));
     }
   }
 
@@ -246,13 +324,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   setLanguage(localStorage.getItem("lang") || "en");
 
-  const savedTheme = localStorage.getItem("theme") || "dark";
+  const storedTheme = localStorage.getItem("theme");
+  const savedTheme = storedTheme === "dark" || storedTheme === "light" ? storedTheme : "light";
   htmlTag.setAttribute("data-theme", savedTheme);
   if (themeToggle) {
     const updateThemeIcon = (theme) => {
       themeToggle.innerHTML = theme === "dark"
-        ? '<i class="fa-solid fa-sun"></i>'
-        : '<i class="fa-solid fa-moon"></i>';
+        ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
+        : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
+      themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
     };
     updateThemeIcon(savedTheme);
     themeToggle.addEventListener("click", () => {
@@ -295,9 +375,16 @@ document.addEventListener("DOMContentLoaded", () => {
       if (backToTop) backToTop.classList.remove("show");
     }
   });
-  if (backToTop) {
-    backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  if (navbar) {
+    if (window.scrollY > 50) {
+      navbar.style.boxShadow = "var(--shadow-sm)";
+      navbar.style.background = "var(--bg-glass)";
+      if (backToTop) backToTop.classList.add("show");
+    }
   }
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+  if (backToTop) backToTop.addEventListener("click", scrollToTop);
+  if (mobileBackToTop) mobileBackToTop.addEventListener("click", scrollToTop);
 
   // Active nav link highlighting on scroll (scrollspy)
   const navLinks = Array.from(document.querySelectorAll(".navbar-nav .nav-link"));
