@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,7 +10,8 @@
 
   <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
-  <title>Yasser Debihi — Software Developer & Web Security Enthusiast</title>
+  <script>try{const theme=localStorage.getItem("theme");if(theme==="light"||theme==="dark")document.documentElement.setAttribute("data-theme",theme);}catch(e){}</script>
+  <title>Yasser Debihi</title>
   <meta name="description" content="Portfolio of Yasser Debihi — Computer Science & Networks graduate and software developer based in M'Sila, Algeria. Python, Flask, web development, and hands-on web security (IDOR, security tooling)." />
   <meta name="author" content="Yasser Debihi" />
   <meta name="keywords" content="Yasser Debihi, Software Developer, Python, Flask, Web Development, Web Security, IDOR, Computer Networks, Algeria, M'Sila, Portfolio" />
@@ -46,14 +47,14 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
   <!-- Preload LCP hero image for faster first paint -->
-  <link rel="preload" as="image" href="assets/php2.jpeg" />
+  <link rel="preload" as="image" href="assets/images/profile.webp" />
 
   <!-- Load fonts without blocking render, with a no-JS fallback -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&family=Tajawal:wght@300;400;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet"></noscript>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-  <link href="assets/styles.css" rel="stylesheet">
+  <link href="assets/styles.css?v=17" rel="stylesheet">
 
   <!-- Structured data (Person) -->
   <script type="application/ld+json">
@@ -76,7 +77,7 @@
 </head>
 <body class="antialiased">
 
-  <a href="#home" class="skip-link" data-i18n="a11y.skip">Skip to content</a>
+  <a href="#main-content" class="skip-link" data-i18n="a11y.skip">Skip to content</a>
 
   <div id="preloader" class="preloader">
     <div class="spinner-border text-primary" role="status">
@@ -85,17 +86,18 @@
   </div>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top glass-nav">
+  <nav class="navbar navbar-expand-xl sticky-top glass-nav">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#home" data-reveal="fade-down">
         Yasser <span class="brand-accent">Debihi</span><span class="brand-dot">.</span>
       </a>
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation" data-i18n-aria-label="a11y.toggleNavigation">
         <span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
       <div class="collapse navbar-collapse" id="navContent">
         <ul class="navbar-nav mx-auto gap-lg-4 text-center">
           <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav.about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#events" data-i18n="nav.events">Events</a></li>
           <li class="nav-item"><a class="nav-link" href="#experience" data-i18n="nav.experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills" data-i18n="nav.skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="nav.projects">Projects</a></li>
@@ -103,12 +105,12 @@
           <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
         <div class="d-flex align-items-center justify-content-center gap-3 mt-3 mt-lg-0">
-          <div class="lang-switch d-flex align-items-center bg-soft rounded-pill p-1">
-            <button id="btn-en" class="btn btn-sm lang-btn active" type="button">EN</button>
-            <button id="btn-ar" class="btn btn-sm lang-btn" type="button">AR</button>
+          <div class="lang-switch d-flex align-items-center bg-soft rounded-pill p-1" role="group" aria-label="Language" data-i18n-aria-label="a11y.language">
+            <button id="btn-en" class="btn btn-sm lang-btn active" type="button" aria-label="English" data-i18n-aria-label="a11y.english" aria-pressed="true">EN</button>
+            <button id="btn-ar" class="btn btn-sm lang-btn" type="button" aria-label="Arabic" data-i18n-aria-label="a11y.arabic" aria-pressed="false">AR</button>
           </div>
-          <button id="themeToggle" class="btn btn-icon rounded-circle bg-soft" aria-label="Toggle dark mode" type="button">
-            <i class="fa-solid fa-moon"></i>
+          <button id="themeToggle" class="btn btn-icon rounded-circle bg-soft" aria-label="Toggle color theme" data-i18n-aria-label="a11y.toggleTheme" aria-pressed="false" type="button">
+            <i class="fa-solid fa-moon" aria-hidden="true"></i>
           </button>
           <a href="assets/cv.pdf" target="_blank" rel="noopener" download class="btn btn-sm btn-primary rounded-pill px-3 fw-semibold nav-cv-btn">
             <i class="fa-solid fa-file-arrow-down me-1"></i><span data-i18n="nav.cv">CV</span>
@@ -118,6 +120,7 @@
     </div>
   </nav>
 
+  <main id="main-content" tabindex="-1">
   <!-- Hero Section -->
   <header id="home" class="hero-section d-flex align-items-center">
     <div class="hero-bg-glow glow-1"></div>
@@ -125,18 +128,18 @@
     <div class="container position-relative z-1">
       <div class="row align-items-center gy-5 flex-column-reverse flex-lg-row">
         <div class="col-lg-7 text-center text-lg-start" data-reveal="fade-up">
-          <div class="d-inline-flex align-items-center px-3 py-2 rounded-pill bg-soft border-accent mb-4 status-badge">
-            <span class="status-dot pulsing me-2"></span>
-            <span class="fw-semibold text-sm" data-i18n="hero.badge">Open to study-abroad & software opportunities</span>
+          <div class="d-inline-flex align-items-center px-3 py-2 rounded-pill bg-soft border-accent mb-4 hero-topic-badge">
+            <i class="fa-solid fa-code text-accent me-2" aria-hidden="true"></i>
+            <span class="fw-semibold text-sm" data-i18n="hero.badge">Software Development • Networks • Web Security</span>
           </div>
           <h1 class="display-3 fw-900 mb-3 hero-title">
             <span data-i18n="hero.hi">Hi, I'm</span> <span class="brand-accent text-gradient">Yasser</span>
           </h1>
           <h2 class="h3 fw-600 mb-4 text-secondary-color typing-container">
-            <span id="typing-text" data-i18n="hero.title">Software Developer</span><span class="cursor">|</span>
+            <span id="typing-text" aria-hidden="true" data-i18n="hero.title">Software Developer</span><span class="visually-hidden" data-i18n="hero.title">Software Developer</span><span class="cursor" aria-hidden="true">|</span>
           </h2>
           <p class="lead mb-5 opacity-80 pe-lg-5 hero-subtitle" data-i18n="hero.subtitle">
-            Computer Science & Networks graduate and software developer. I build practical web tools and Python applications — from a complete management system for a travel agency to academic and side projects.
+            Computer Science graduate passionate about building practical software and exploring networks and web security. Interested in learning, collaboration, and tackling real-world challenges.
           </p>
           <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
             <a href="#projects" class="btn btn-primary btn-lg rounded-pill px-4 shadow-accent hover-lift">
@@ -158,11 +161,14 @@
         <div class="col-lg-5 text-center position-relative" data-reveal="fade-left">
           <div class="profile-wrapper mx-auto">
             <div class="profile-ring"></div>
-            <img id="profile-photo" src="assets/php2.jpeg" alt="Portrait of Yasser Debihi" class="profile-photo" width="440" height="440" decoding="async" fetchpriority="high">
+            <picture>
+              <source srcset="assets/images/profile.webp" type="image/webp">
+              <img id="profile-photo" src="assets/php2.JPG" alt="Portrait of Yasser Debihi" class="profile-photo" width="900" height="1200" decoding="async" fetchpriority="high">
+            </picture>
           </div>
-          <div class="floating-badge badge-1 glass-card"><i class="fa-brands fa-python text-warning"></i></div>
-          <div class="floating-badge badge-2 glass-card"><i class="fa-solid fa-network-wired text-info"></i></div>
-          <div class="floating-badge badge-3 glass-card"><i class="fa-brands fa-js text-warning"></i></div>
+          <div class="floating-badge badge-1 glass-card"><i class="fa-brands fa-python text-warning" aria-hidden="true"></i></div>
+          <div class="floating-badge badge-2 glass-card"><i class="fa-solid fa-network-wired text-info" aria-hidden="true"></i></div>
+          <div class="floating-badge badge-3 glass-card"><i class="fa-brands fa-js text-warning" aria-hidden="true"></i></div>
         </div>
       </div>
     </div>
@@ -176,13 +182,21 @@
     <div class="container">
       <div class="row gy-5 align-items-center">
         <div class="col-lg-5" data-reveal="fade-right">
-          <div class="about-image-wrapper position-relative rounded-4 overflow-hidden shadow-lg">
-            <div class="aspect-ratio-box bg-soft d-flex align-items-center justify-content-center h-100 p-5">
-              <i class="fa-solid fa-code opacity-25 display-1"></i>
-            </div>
-            <div class="about-stats glass-card position-absolute bottom-0 start-0 m-3 p-3 rounded-3 border-accent-left">
-              <h4 class="fw-bold mb-0 text-gradient" data-i18n="about.badge">Graduate</h4>
-              <span class="small opacity-75" data-i18n="about.years">CS &amp; Networks</span>
+          <div class="about-focus-card bg-glass rounded-4 p-4 p-lg-5 h-100">
+            <span class="text-accent fw-bold tracking-widest text-uppercase small" data-i18n="about.focusTitle">Focus Areas</span>
+            <div class="d-flex flex-column gap-4 mt-4">
+              <div class="about-focus-item d-flex align-items-center gap-3">
+                <span class="about-focus-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></span>
+                <span class="fw-semibold" data-i18n="about.focusSoftware">Practical software</span>
+              </div>
+              <div class="about-focus-item d-flex align-items-center gap-3">
+                <span class="about-focus-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></span>
+                <span class="fw-semibold" data-i18n="about.focusNetworks">Networks</span>
+              </div>
+              <div class="about-focus-item d-flex align-items-center gap-3">
+                <span class="about-focus-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                <span class="fw-semibold" data-i18n="about.focusSecurity">Web security</span>
+              </div>
             </div>
           </div>
         </div>
@@ -192,7 +206,7 @@
             <h2 class="section-title h1 fw-900 mt-2" data-i18n="about.title">Building Useful <span class="brand-accent">Software</span>.</h2>
           </div>
           <p class="fs-5 text-secondary-color lead-text" data-i18n="about.p1">
-            I'm a Computer Science & Networks graduate from the University of M'Sila and a software developer. I enjoy turning real problems into clean, working tools — mostly with Python and modern web technologies.
+            I'm a Computer Science & Networks graduate from the University of M'Sila and a software developer. I enjoy turning real problems into clean, working tools mostly with Python and modern web technologies.
           </p>
           <p class="text-secondary-color mt-3" data-i18n="about.p2">
             I currently work at a travel agency, where I built a complete internal system to manage clients and invoices. I value careful planning before writing code, and I'm now preparing to continue my studies abroad.
@@ -237,63 +251,132 @@
     </div>
   </section>
 
+  <!-- Events & Conferences -->
+  <section id="events" class="section-pad bg-alternate showcase-section">
+    <div class="container">
+      <div class="event-intro row g-4 align-items-end mb-4" data-reveal="fade-up">
+        <div class="col-lg-6">
+          <span class="text-accent fw-bold tracking-widest text-uppercase small" data-i18n="events.eyebrow">Events &amp; Conferences</span>
+          <h2 class="section-title h1 fw-900 mt-2 mb-3" data-i18n="events.title">OpenSSL Conference 2026</h2>
+          <p class="event-meta text-secondary-color mb-0">
+            <i class="fa-solid fa-location-dot me-2" aria-hidden="true"></i>
+            <span data-i18n="events.meta">Prague, Czech Republic · 13–15 October 2026</span>
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <p class="text-secondary-color lead mb-0" data-i18n="events.desc">I attended OpenSSL Conference 2026 in Prague through a fully funded scholarship. I’m interested in learning and connecting with experienced people in the field.</p>
+        </div>
+      </div>
+      <div class="event-gallery row g-3 align-items-stretch">
+        <div class="col-lg-7" data-reveal="fade-up">
+          <figure class="event-photo-card event-photo-card-featured bg-glass rounded-4 p-2 mb-0">
+            <picture>
+              <source srcset="assets/images/IMG_4758.webp" type="image/webp">
+              <img src="assets/images/IMG_4758.png" class="event-photo rounded-3" alt="Yasser in front of the OpenSSL Conference sign" data-i18n-alt="events.mainAlt" width="1800" height="1439" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+        </div>
+        <div class="col-lg-5">
+          <div class="event-support-grid row g-3 h-100">
+            <div class="col-12 col-sm-6 col-lg-12" data-reveal="fade-up" data-reveal-delay="100">
+              <figure class="event-photo-card event-photo-card-support bg-glass rounded-4 p-2 mb-0">
+                <picture>
+                  <source srcset="assets/images/IMG_4708.webp" type="image/webp">
+                  <img src="assets/images/IMG_4708.PNG" class="event-photo rounded-3" alt="Attendees posing together at OpenSSL Conference 2026" data-i18n-alt="events.groupAlt" width="754" height="280" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-12" data-reveal="fade-up" data-reveal-delay="150">
+              <figure class="event-photo-card event-photo-card-support bg-glass rounded-4 p-2 mb-0">
+                <img src="assets/images/IMG_4763.webp" class="event-photo rounded-3" alt="Audience watching a technical presentation at OpenSSL Conference 2026" data-i18n-alt="events.sessionAlt" width="793" height="634" loading="lazy" decoding="async">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Experience & Education -->
-  <section id="experience" class="section-pad bg-alternate">
+  <section id="experience" class="section-pad bg-alternate journey-section">
     <div class="container">
       <div class="section-header text-center mb-5" data-reveal="fade-up">
         <span class="text-accent fw-bold tracking-widest text-uppercase small" data-i18n="section.journey">My Journey</span>
         <h2 class="section-title h1 fw-900 mt-2 mx-auto" data-i18n="journey.title">Experience &amp; <span class="brand-accent">Education</span></h2>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="timeline-modern">
-            <div class="timeline-modern-item" data-reveal="fade-up">
-              <div class="timeline-modern-marker bg-accent shadow-accent text-white"><i class="fa-solid fa-briefcase"></i></div>
-              <div class="timeline-modern-content bg-glass rounded-4 p-4 border-soft shadow-sm hover-elevate transition">
-                <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                  <div>
-                    <h4 class="fw-bold mb-1" data-i18n="exp.travel.role">Software Developer</h4>
-                    <h6 class="text-accent fw-semibold mb-0" data-i18n="exp.travel.company">Travel &amp; Tourism Agency</h6>
-                  </div>
-                  <div class="badge bg-soft text-color align-self-start mt-2 mt-md-0 py-2 px-3 fw-bold border" data-i18n="exp.travel.time">2025 – Present</div>
+      <div class="row g-4 align-items-stretch journey-grid">
+        <div class="col-lg-7" data-reveal="fade-up">
+          <article class="journey-panel experience-panel">
+            <div class="journey-panel-heading d-flex flex-wrap justify-content-between align-items-start gap-3 mb-4">
+              <div>
+                <span class="journey-eyebrow text-accent" data-i18n="journey.experience">Professional experience</span>
+                <h3 class="h4 fw-bold mb-2" data-i18n="exp.travel.role">Software Developer</h3>
+                <div class="workplace-identity">
+                  <img src="assets/images/pinson-logo.webp" class="workplace-logo" alt="Pinson Travels logo, identifying the travel-agency workplace" data-i18n-alt="exp.travel.logoAlt" width="56" height="56" loading="lazy" decoding="async">
+                  <h4 class="h6 text-accent fw-semibold mb-0" data-i18n="exp.travel.company">Travel &amp; Tourism Agency</h4>
                 </div>
+              </div>
+              <span class="journey-date badge bg-soft text-color py-2 px-3 fw-bold border" data-i18n="exp.travel.time">2026 – Present</span>
+            </div>
+            <div class="row g-4 align-items-center">
+              <div class="col-12">
                 <ul class="text-secondary-color ps-3 mb-0">
                   <li class="mb-2" data-i18n="exp.travel.l1">Built a complete internal management system (Python + MySQL) for clients, invoices, and records.</li>
                   <li class="mb-2" data-i18n="exp.travel.l2">Hosted it on the local network so every PC in the agency shares the same data.</li>
                   <li data-i18n="exp.travel.l3">Created a Python script that checks visa-appointment availability and sends instant Telegram alerts.</li>
                 </ul>
               </div>
-            </div>
-            <div class="timeline-modern-item" id="education" data-reveal="fade-up">
-              <div class="timeline-modern-marker bg-body border border-accent text-accent"><i class="fa-solid fa-graduation-cap"></i></div>
-              <div class="timeline-modern-content bg-transparent p-4 border-start border-4 border-accent rounded-end-4 hover-bg-soft transition">
-                <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                  <div>
-                    <h4 class="fw-bold mb-1" data-i18n="edu.master.title">Master's in Networks &amp; ICT</h4>
-                    <h6 class="text-secondary-color fw-medium mb-0" data-i18n="edu.uni">University of M'Sila</h6>
-                  </div>
-                  <div class="text-md-end mt-2 mt-md-0">
-                    <div class="text-accent fw-bold" data-i18n="edu.master.meta">Graduated 2026</div>
-                    <div class="small opacity-75" data-i18n="edu.master.rank">Ranked 12 of 55</div>
-                  </div>
+              <div class="col-12">
+                <div class="journey-photo-gallery experience-photo-gallery">
+                  <figure class="journey-photo-card">
+                    <img src="assets/images/IMG_0433.webp" class="journey-gallery-photo" alt="A computer monitor showing network settings, beside a laptop and networking equipment" data-i18n-alt="experience.networkPhotoAlt" width="4032" height="3024" loading="lazy" decoding="async">
+                  </figure>
+                  <figure class="journey-photo-card">
+                    <img src="assets/IMG_1111.png" class="journey-gallery-photo" alt="A person seated beside a computer displaying code and a web interface" data-i18n-alt="experience.developerPhotoAlt" width="828" height="821" loading="lazy" decoding="async">
+                  </figure>
                 </div>
-                <p class="text-secondary-color small mb-0" data-i18n="edu.master.desc">Graduation project (team): a face-recognition student-attendance system, where I was responsible for development and implementation.</p>
               </div>
             </div>
-            <div class="timeline-modern-item pb-0" data-reveal="fade-up">
-              <div class="timeline-modern-marker bg-body border border-secondary text-secondary"><i class="fa-solid fa-award"></i></div>
-              <div class="timeline-modern-content bg-transparent p-4 border-start border-4 border-secondary rounded-end-4 hover-bg-soft transition">
-                <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                  <div>
-                    <h4 class="fw-bold mb-1 opacity-75" data-i18n="edu.bsc.title">Bachelor's in Information Systems &amp; Software Engineering</h4>
-                    <h6 class="text-secondary-color fw-medium mb-0 opacity-75" data-i18n="edu.uni">University of M'Sila</h6>
-                  </div>
-                  <div class="text-secondary fw-bold mt-2 mt-md-0 opacity-75" data-i18n="edu.bsc.meta">2024</div>
+          </article>
+        </div>
+        <div class="col-lg-5" id="education" data-reveal="fade-up" data-reveal-delay="100">
+          <article class="journey-panel education-panel">
+            <span class="journey-eyebrow text-accent" data-i18n="journey.education">Education</span>
+            <section class="education-entry education-master">
+              <div class="d-flex flex-column flex-sm-row justify-content-between gap-2 mb-3">
+                <div>
+                  <h3 class="h5 fw-bold mb-1" data-i18n="edu.master.title">Master's in Networks &amp; ICT</h3>
+                  <h4 class="h6 text-secondary-color fw-medium mb-0" data-i18n="edu.uni">University of M'Sila</h4>
                 </div>
-                <p class="text-secondary-color small mb-0" data-i18n="edu.bsc.desc">Graduation project (team): a hotel website with an admin dashboard. Foundation in programming, databases, web development, and networks.</p>
+                <div class="education-meta text-sm-end">
+                  <div class="text-accent fw-bold" data-i18n="edu.master.meta">Graduated 2026</div>
+                  <div class="small opacity-75" data-i18n="edu.master.rank">Ranked 12 of 55</div>
+                </div>
               </div>
-            </div>
-          </div>
+              <div class="row g-3">
+                <div class="col-12">
+                  <p class="text-secondary-color small mb-0" data-i18n="edu.master.desc">Graduation project (team): a face-recognition student-attendance system, where I was responsible for development and implementation.</p>
+                </div>
+                <div class="col-12">
+                  <div class="journey-photo-gallery education-photo-gallery">
+                    <figure class="journey-photo-card">
+                      <img src="assets/images/IMG_0797.webp" class="journey-gallery-photo" alt="People seated at computers in a lab, with laptops and printed pages on the desks" data-i18n-alt="education.labPhotoAlt" width="3024" height="2566" loading="lazy" decoding="async">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="education-entry education-bachelor">
+              <div class="d-flex flex-column flex-sm-row justify-content-between gap-2 mb-2">
+                <div>
+                  <h3 class="h5 fw-bold mb-1 opacity-75" data-i18n="edu.bsc.title">Bachelor's in Information Systems &amp; Software Engineering</h3>
+                  <h4 class="h6 text-secondary-color fw-medium mb-0 opacity-75" data-i18n="edu.uni">University of M'Sila</h4>
+                </div>
+                <div class="text-secondary fw-bold" data-i18n="edu.bsc.meta">2024</div>
+              </div>
+              <p class="text-secondary-color small mb-0" data-i18n="edu.bsc.desc">Graduation project (team): a hotel website with an admin dashboard. Foundation in programming, databases, web development, and networks.</p>
+            </section>
+          </article>
         </div>
       </div>
     </div>
@@ -568,6 +651,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="py-4 text-center bg-body">
     <div class="container">
@@ -577,19 +662,22 @@
     </div>
   </footer>
 
-  <button id="toTop" class="to-top btn btn-primary rounded-circle shadow-accent" aria-label="Back to top">
-    <i class="fa-solid fa-arrow-up"></i>
+  <button id="toTop" class="to-top btn btn-primary rounded-circle shadow-accent" type="button" aria-label="Back to top" data-i18n-aria-label="a11y.backToTop">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
   </button>
 
   <!-- Sticky mobile contact dock (phones/tablets only) -->
-  <nav class="mobile-dock" aria-label="Quick contact">
-    <a href="mailto:contact@yasserdbh.com" aria-label="Email"><i class="fa-solid fa-envelope"></i><span>Email</span></a>
-    <a href="https://github.com/yasser0xD" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
-    <a href="https://www.linkedin.com/in/yasserdbh213" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
-    <a href="assets/cv.pdf" target="_blank" rel="noopener" aria-label="Download CV"><i class="fa-solid fa-file-arrow-down"></i><span>CV</span></a>
+  <nav class="mobile-dock" aria-label="Quick links" data-i18n-aria-label="a11y.quickLinks">
+    <a href="mailto:contact@yasserdbh.com" aria-label="Email" data-i18n-aria-label="a11y.email"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span data-i18n="dock.email">Email</span></a>
+    <a href="https://github.com/yasser0xD" target="_blank" rel="noopener" aria-label="GitHub" data-i18n-aria-label="a11y.github"><i class="fa-brands fa-github" aria-hidden="true"></i><span data-i18n="dock.github">GitHub</span></a>
+    <a href="https://www.linkedin.com/in/yasserdbh213" target="_blank" rel="noopener" aria-label="LinkedIn" data-i18n-aria-label="a11y.linkedin"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span data-i18n="dock.linkedin">LinkedIn</span></a>
+    <a href="assets/cv.pdf" target="_blank" rel="noopener" aria-label="Download CV" data-i18n-aria-label="a11y.downloadCv"><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i><span data-i18n="dock.cv">CV</span></a>
+    <button id="mobileToTop" class="mobile-dock-to-top" type="button" aria-label="Back to top" data-i18n-aria-label="a11y.backToTop">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i><span data-i18n="dock.top">Top</span>
+    </button>
   </nav>
 
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script defer src="assets/script.js"></script>
+  <script defer src="assets/script.js?v=19"></script>
 </body>
 </html>

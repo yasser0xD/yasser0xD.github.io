@@ -2,16 +2,24 @@
    Strategy: NETWORK-FIRST for same-origin requests so deployed updates
    (HTML/CSS/JS) are always fresh when online; cache is the offline fallback.
    Bump CACHE on each meaningful change to purge stale entries. */
-const CACHE = "yasserdbh-v3";
+const CACHE = "yasserdbh-v19";
 const CORE = [
   "./",
   "index.html",
   "404.html",
-  "assets/styles.css",
-  "assets/script.js",
+  "assets/styles.css?v=17",
+  "assets/script.js?v=19",
   "assets/favicon.svg",
-  "assets/php2.jpeg",
+  "assets/php2.JPG",
   "assets/og-cover.png",
+  "assets/images/profile.webp",
+  "assets/images/IMG_4763.webp",
+  "assets/images/IMG_4758.webp",
+  "assets/images/IMG_4708.webp",
+  "assets/images/pinson-logo.webp",
+  "assets/images/IMG_0433.webp",
+  "assets/IMG_1111.png",
+  "assets/images/IMG_0797.webp",
   "site.webmanifest"
 ];
 
